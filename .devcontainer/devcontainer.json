@@ -1,22 +1,33 @@
 {
-	"name": "Codespaces for Thanos",
-	"customizations": {
-	  "vscode": {
-		"settings": {
-		  "go.toolsManagement.checkForUpdates": "local",
-		  "go.useLanguageServer": true,
-		  "go.gopath": "/go"
-		}
-	  }
-	},
-	"extensions": [
-	  "ms-azuretools.vscode-docker",
-	  "ms-kubernetes-tools.vscode-kubernetes-tools",
-	  "davidanson.vscode-markdownlint",
-	  "timonwong.shellcheck",
-	  "docsmsft.docs-yaml",
-	  "Grafana.vscode-jsonnet",
-	  "codezombiech.gitignore",
-	  "golang.Go"
-	]
+  "name": "Codespaces for Thanos",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "forwardPorts": [
+    10914
+  ],
+  "portsAttributes": {
+    "10914": {
+      "label": "Open Preview",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "davidanson.vscode-markdownlint",
+        "timonwong.shellcheck",
+        "docsmsft.docs-yaml",
+        "Grafana.vscode-jsonnet",
+        "codezombiech.gitignore"
+      ]
+    }
+  }
 }
