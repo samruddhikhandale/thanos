@@ -16,3 +16,6 @@ RUN echo "Downloading prometheus..." \
     && rm "${PROMETHEUS_FILE_NAME}.tar.gz" \
     && mv ${PROMETHEUS_FILE_NAME}/prometheus /go/bin/
 
+ENV GOPROXY "https://proxy.golang.org"
+
+COPY .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt

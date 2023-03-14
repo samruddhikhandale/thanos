@@ -4,16 +4,38 @@
     "context": "..",
     "dockerfile": "Dockerfile"
   },
+  "workspaceFolder": "/go/src/github.com/thanos-io/thanos",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/go/src/github.com/thanos-io/thanos,type=bind,consistency=cached",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/node:1": {}
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+  },
+  "onCreateCommand": "make build",
+  "postAttachCommand": {
+    "Run quickstart": "cd scripts && ./quickstart.sh"
   },
   "forwardPorts": [
-    10914
+    10914,
+    9090,
+    9091,
+    9092
   ],
   "portsAttributes": {
     "10914": {
       "label": "Open Preview",
+      "onAutoForward": "notify"
+    },
+    "9090": {
+      "label": "Prometheus Instance 1",
+      "onAutoForward": "notify"
+    },
+    "9091": {
+      "label": "Prometheus Instance 2",
+      "onAutoForward": "notify"
+    },
+    "9092": {
+      "label": "Prometheus Instance 3",
       "onAutoForward": "notify"
     }
   },
