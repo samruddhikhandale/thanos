@@ -13,40 +13,38 @@
   },
   "onCreateCommand": "make build",
   "postAttachCommand": {
-    "Run quickstart": "cd scripts && ./quickstart.sh"
+    "Run quickstart": "bash scripts/quickstart.sh"
   },
   "forwardPorts": [
     1313,
-    10914,
     9090,
     9091,
     9092,
-    10921
+    10904,
+    10913,
+    10914
   ],
   "portsAttributes": {
     "1313": {
-      "label": "Website",
-      "onAutoForward": "notify"
-    },
-    "10914": {
-      "label": "Thanos Preview",
-      "onAutoForward": "notify"
+      "label": "Website"
     },
     "9090": {
-      "label": "Prometheus Instance 1",
-      "onAutoForward": "notify"
+      "label": "Prometheus Instance 1"
     },
     "9091": {
-      "label": "Prometheus Instance 2",
-      "onAutoForward": "notify"
+      "label": "Prometheus Instance 2"
     },
     "9092": {
-      "label": "Prometheus Instance 3",
-      "onAutoForward": "notify"
+      "label": "Prometheus Instance 3"
     },
-    "10921": {
-      "label": "Not useful?",
-      "onAutoForward": "notify"
+    "10904": {
+      "label": "Thanos Query"
+    },
+    "10913": {
+      "label": "Thanos Query"
+    },
+    "10914": {
+      "label": "Thanos Query"
     }
   },
   "customizations": {
