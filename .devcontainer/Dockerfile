@@ -1,11 +1,5 @@
 FROM mcr.microsoft.com/devcontainers/go:0-1.20
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-    curl \
-    jq \
-    tar
-
 RUN echo "Downloading prometheus..." \
     && curl -sSL -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/prometheus/prometheus/tags" -o /tmp/tags.json \
     && VERSION_LIST="$(jq -r '.[] | select(.name | contains("rc") | not) | .name | split("v") | .[1]' /tmp/tags.json | tr -d '"' | sort -rV)" \
