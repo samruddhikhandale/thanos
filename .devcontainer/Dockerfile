@@ -1,3 +1,4 @@
+# For details, see https://github.com/devcontainers/images/tree/main/src/go
 FROM mcr.microsoft.com/devcontainers/go:0-1.20
 
 RUN echo "Downloading prometheus..." \
