@@ -4,7 +4,7 @@
 
 🚀 All the components of Thanos are spinning up with the "quickstart" script, navigate over to the "Ports" tab to access it.
 
-ℹ️ By default, the port visibility is "private", change the visibility of "Prometheus instances" to "public" so that the API endpoints can be updated.
+ℹ️  Note: Change the visibility of "Prometheus instances" to "public" so that the API endpoints can be updated.
 
 🔍 To explore VS Code to its fullest, search using the Command Palette (Cmd/Ctrl + Shift + P or F1).
 
