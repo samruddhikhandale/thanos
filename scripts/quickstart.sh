@@ -302,7 +302,7 @@ for i in $(seq 0 1); do
     --query.replica-label prometheus \
     --tracing.config="${QUERIER_JAEGER_CONFIG}" \
     --query.replica-label receive_replica \
-    "${STORES}" &
+    ${STORES} &
 done
 
 sleep 0.5
